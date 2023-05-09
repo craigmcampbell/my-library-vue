@@ -1,0 +1,5 @@
+fragment AuthorDetails on Author {
+  id
+  firstName
+  lastName
+}

@@ -1,0 +1,7 @@
+#import "./series.fragment.gql"
+
+mutation AddSeries($series: AddSeriesInput!) {
+  addSeries(series: $series) {
+    ...SeriesDetails
+  }
+}

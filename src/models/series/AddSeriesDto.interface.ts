@@ -1,7 +1,5 @@
-export default interface AddSeriesDto {
+import type BaseSeriesDto from './BaseSeriesDto.interface';
+export default interface AddSeriesDto extends BaseSeriesDto {
   authorFirstName: string;
-  authorId: string;
   authorLastName: string;
-  name: string;
-  numberOfBooks: null | number;
 }

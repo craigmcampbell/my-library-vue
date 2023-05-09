@@ -1,0 +1,7 @@
+#import "./series.fragment.gql"
+
+query GetAllSeries {
+  getAllSeries {
+    ...SeriesDetails
+  }
+}

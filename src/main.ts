@@ -1,7 +1,7 @@
-import { createApp, provide, h } from 'vue';
+import { createApp, h, provide } from 'vue';
 import { createPinia } from 'pinia';
 import { DefaultApolloClient } from '@vue/apollo-composable';
-import { ApolloClient, InMemoryCache } from '@apollo/client/core';
+import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client/core';
 
 import App from './App.vue';
 import router from './router';
@@ -9,12 +9,16 @@ import router from './router';
 import './assets/main.css';
 
 // Set Up GraphQL Client
+const graphqlUrl = import.meta.env.VITE_GRAPHQL_URL;
 const cache = new InMemoryCache();
+
+const httpLink = createHttpLink({
+  uri: graphqlUrl,
+});
 
 const apolloClient = new ApolloClient({
   cache,
-  // uri: 'https://rickandmortyapi.com/graphql',
-  uri: 'http://localhost:3000/graphql',
+  link: httpLink,
 });
 
 // Global Components
@@ -23,8 +27,6 @@ import BaseInput from './components/Forms/BaseInput.vue';
 import BaseRadio from './components/Forms/BaseRadio.vue';
 import BaseRadioGroup from './components/Forms/BaseRadioGroup.vue';
 import BaseSelect from './components/Forms/BaseSelect.vue';
-
-// const app = createApp(App);
 
 const app = createApp({
   setup() {

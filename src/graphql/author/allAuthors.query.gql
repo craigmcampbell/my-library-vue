@@ -1,0 +1,7 @@
+#import "./author.fragment.gql"
+
+query GetAllAuthors {
+  getAllAuthors {
+    ...AuthorDetails
+  }
+}

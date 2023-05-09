@@ -1,0 +1,11 @@
+#import "../author/author.fragment.gql"
+
+fragment SeriesDetails on Series {
+  id
+  authorId
+  name
+  numberOfBooks
+  author {
+    ...AuthorDetails
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "recommendations": ["apollographql.vscode-apollo", "Vue.volar", "Vue.vscode-typescript-vue-plugin"],
+  "unwantedRecommendations": []
+}

@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
-import SeriesView from '../views/SeriesView.vue';
-import AddSeriesView from '../views/AddSeriesView.vue';
+import SeriesView from '../views/series/SeriesView.vue';
+import AddSeriesView from '../views/series/AddSeriesView.vue';
+import EditSeriesView from '../views/series/EditSeriesView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +35,11 @@ function seriesRoutes() {
       path: '/series/add',
       name: 'add-series',
       component: AddSeriesView,
+    },
+    {
+      path: '/series/edit/:id',
+      name: 'edit-series',
+      component: EditSeriesView,
     },
   ];
 }

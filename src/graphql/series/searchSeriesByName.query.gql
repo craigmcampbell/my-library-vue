@@ -1,0 +1,7 @@
+#import "./series.fragment.gql"
+
+query SearchSeriesByName($name: String!) {
+  searchSeriesByName(name: $name) {
+    ...SeriesDetails
+  }
+}
